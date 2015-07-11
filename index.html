@@ -1,4 +1,6 @@
 <script src="http://threejs.org/build/three.min.js"></script>
+<script src="three.projector.js"></script>
+
 <script src="jq.m.js"></script>
 <script src="jszip.min.js"></script>
 <script src="jszip-utils.min.js"></script>
@@ -7,14 +9,61 @@
 
 <script>
 Tabula.render_model("#canvas", "ModelZombie.tbl");
+//Tabula.render_model("#canvas", "crossbow.tbl");
+
 </script>
 
 <style>
+body{
+  color: blue;
+}
  #canvas{
-   width:300px;
+   width:50%;
    height: 500px;
+   border: 1px solid black;
+   float:left;
  }
+ #stats{
+   margin-top: 1px;
+   float: left;
+   color: black;
+   margin-left: 10px;
+   height: 500px;
+   overflow-y: scroll;
+   outline: 1px solid #000;
+
+ }
+ pre {
+   padding: 5px;
+   margin: 5px;
+   margin-top: 1px;
+   background: #fefdfb;
+ }
+.string {
+  color: black;
+  font-weight: bold;
+}
+.number {
+  color: darkred;
+  font-weight: bold;
+}
+.boolean {
+  color: darkgreen;
+  font-weight: bold;
+}
+.null {
+  color: magenta;
+}
+.key {
+  color: #330066;
+  font-weight: bold;
+}
 </style>
 <body>
   <div id="canvas"></div>
+  <div id="stats">
+    <code>Press 'W' to toggle Render Mode</code>
+    <pre id="statspanel"></pre>
+  </div>
+
 </body>
